@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Kontakt">
+  <div class="strona-hero">
+    <h1>Kontakt</h1>
+    <p>Skontaktuj się z nami — odpiszemy lub oddzwonimy najszybciej jak to możliwe.</p>
+  </div>
+
+  <div class="strona-tresc">
+    <div class="kontakt-grid">
+      <div class="kontakt-sekcja">
+        <h2>Dane kontaktowe</h2>
+
+        <div class="kontakt-pozycja">
+          <span class="kontakt-etykieta">Telefon</span>
+          <a href="tel:+48792518315">+48 792 518 315</a>
+        </div>
+
+        <div class="kontakt-pozycja">
+          <span class="kontakt-etykieta">E-mail</span>
+          <a href="mailto:osrodek.mp@gmail.com">osrodek.mp@gmail.com</a>
+        </div>
+
+        <div class="kontakt-pozycja">
+          <span class="kontakt-etykieta">Adres</span>
+          <span>ul. Antoniukowska 62/1<br />15-845 Białystok</span>
+        </div>
+
+        <div class="kontakt-pozycja">
+          <span class="kontakt-etykieta">Facebook</span>
+          <a href="https://www.facebook.com/61558793636623" target="_blank">Ośrodek Mediacyjno-Psychologiczny</a>
+        </div>
+      </div>
+
+      <div class="kontakt-info">
+        <h2>Kiedy pisać?</h2>
+        <p>Jeśli chcesz umówić się na mediację, terapię lub zapytać o szkolenie — napisz lub zadzwoń. Opisz krótko czego potrzebujesz, a wrócimy do ciebie najszybciej jak możemy.</p>
+        <p>Wszystkie zgłoszenia traktujemy poufnie.</p>
+
+        <div class="szybkie-linki">
+          <a href="/mediacje">Mediacje →</a>
+          <a href="/szkolenia">Szkolenia →</a>
+          <a href="/terapia">Terapia →</a>
+          <a href="/jak-nas-znalezc">Jak nas znaleźć →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .kontakt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    .kontakt-sekcja h2,
+    .kontakt-info h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      margin-bottom: 28px;
+      margin-top: 0;
+    }
+    .kontakt-pozycja {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #e5ece4;
+    }
+    .kontakt-pozycja:last-child { border-bottom: none; }
+    .kontakt-etykieta {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--szary);
+    }
+    .kontakt-pozycja a,
+    .kontakt-pozycja span:last-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--czarny);
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .kontakt-pozycja a:hover { color: var(--zielony-ciemny); }
+    .kontakt-info p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .szybkie-linki {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .szybkie-linki a {
+      font-size: 0.85rem;
+      color: var(--czarny);
+      text-decoration: none;
+      border-bottom: 1px solid #e5ece4;
+      padding-bottom: 12px;
+      transition: color 0.2s;
+    }
+    .szybkie-linki a:hover { color: var(--zielony-ciemny); }
+    @media (max-width: 700px) {
+      .kontakt-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Szkolenia">
+  <div class="strona-hero">
+    <h1>Szkolenia</h1>
+    <p>Prowadzimy szkolenia z mediacji, umiejętności miękkich i psychoedukacji dla szkół, instytucji i firm z całej Polski.</p>
+  </div>
+
+  <div class="strona-tresc">
+    <h2>Dla kogo?</h2>
+    <p>Nasze szkolenia kierujemy do szerokiego grona odbiorców: pedagogów, psychologów szkolnych, nauczycieli, pracowników działów HR, liderów zespołów, sędziów, adwokatów, a także wszystkich, którzy chcą rozwijać kompetencje mediacyjne i komunikacyjne.</p>
+
+    <div class="szkolenia-lista">
+      <div class="szkolenie">
+        <div class="szkolenie-nr">01</div>
+        <div class="szkolenie-tresc">
+          <h3>Szkolenie bazowe z mediacji</h3>
+          <p>Kompleksowe wprowadzenie do mediacji — teoria, techniki i ćwiczenia praktyczne. Program obejmuje specjalizację w sprawach cywilnych i gospodarczych lub rodzinnych. Po ukończeniu uczestnicy otrzymują certyfikat mediatora.</p>
+        </div>
+      </div>
+      <div class="szkolenie">
+        <div class="szkolenie-nr">02</div>
+        <div class="szkolenie-tresc">
+          <h3>Szkolne Kluby Mediatora</h3>
+          <p>Program wdrażania mediacji rówieśniczej w szkołach. Szkolimy uczniów i nauczycieli, tworząc w szkole kulturę dialogu i konstruktywnego rozwiązywania konfliktów. Program realizowany w szkołach w całej Polsce.</p>
+        </div>
+      </div>
+      <div class="szkolenie">
+        <div class="szkolenie-nr">03</div>
+        <div class="szkolenie-tresc">
+          <h3>Mediacje rówieśnicze — warsztaty</h3>
+          <p>Intensywne warsztaty praktyczne dla pedagogów i psychologów szkolnych. Uczestnicy uczą się jak prowadzić mediacje między uczniami i jak reagować na konflikty w środowisku szkolnym.</p>
+        </div>
+      </div>
+      <div class="szkolenie">
+        <div class="szkolenie-nr">04</div>
+        <div class="szkolenie-tresc">
+          <h3>Kurs na mediatora wewnątrzorganizacyjnego</h3>
+          <p>Szkolenie dedykowane liderom i pracownikom działów HR. Uczy jak rozwiązywać konflikty wewnątrz organizacji bez angażowania zewnętrznych instytucji.</p>
+        </div>
+      </div>
+      <div class="szkolenie">
+        <div class="szkolenie-nr">05</div>
+        <div class="szkolenie-tresc">
+          <h3>Negocjacje w biznesie</h3>
+          <p>Szkolenie rozwijające kompetencje negocjacyjne. Obejmuje techniki negocjacji, zarządzanie emocjami w trudnych rozmowach i budowanie trwałych porozumień.</p>
+        </div>
+      </div>
+      <div class="szkolenie">
+        <div class="szkolenie-nr">06</div>
+        <div class="szkolenie-tresc">
+          <h3>Psychoedukacja i profilaktyka</h3>
+          <p>Zajęcia psychoedukacyjne dla młodzieży i dorosłych — profilaktyka zachowań ryzykownych, budowanie odporności psychicznej, radzenie sobie ze stresem i emocjami.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Forma szkoleń</h2>
+    <p>Szkolenia prowadzimy w formie stacjonarnej oraz online. Oferujemy szkolenia otwarte i zamknięte — dedykowane konkretnej instytucji lub firmie.</p>
+
+    <div class="cta-box">
+      <p>Interesuje cię szkolenie dla twojej szkoły lub firmy?</p>
+      <a href="/kontakt">Napisz do nas →</a>
+    </div>
+  </div>
+
+  <style>
+    .szkolenia-lista {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e5ece4;
+      margin: 32px 0;
+    }
+    .szkolenie {
+      display: flex;
+      border-bottom: 1px solid #e5ece4;
+    }
+    .szkolenie:last-child { border-bottom: none; }
+    .szkolenie-nr {
+      min-width: 80px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 28px 20px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--zielony);
+      border-right: 1px solid #e5ece4;
+    }
+    .szkolenie-tresc { padding: 24px 28px; }
+    .szkolenie-tresc h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .szkolenie-tresc p {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--szary);
+      margin: 0;
+    }
+    .cta-box {
+      margin-top: 48px;
+      padding: 32px;
+      background: var(--zielony-jasny);
+      border-left: 3px solid var(--zielony);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .cta-box p { font-size: 1rem; color: var(--czarny); margin: 0; }
+    .cta-box a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--czarny);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--zielony-ciemny);
+      padding-bottom: 2px;
+    }
+  </style>
+</Layout>

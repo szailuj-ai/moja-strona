@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Terapia">
+  <div class="strona-hero">
+    <h1>Terapia</h1>
+    <p>Wsparcie psychologiczne, psychoterapia i doradztwo — w bezpiecznej, poufnej przestrzeni.</p>
+  </div>
+
+  <div class="strona-tresc">
+    <h2>Dla kogo?</h2>
+    <p>Oferujemy wsparcie terapeutyczne dla osób dorosłych, par i rodzin. Trafiają do nas osoby przeżywające kryzysy życiowe, trudności w relacjach, stany lękowe, wypalenie zawodowe, żałobę lub poszukujące głębszego rozumienia siebie.</p>
+    <p>Nie trzeba być "w poważnych tarapatach" żeby skorzystać z terapii. Czasem wystarczy potrzeba rozmowy z kimś neutralnym, kto pomoże poukładać myśli i emocje.</p>
+
+    <div class="oferta-grid">
+      <div class="oferta-kafel">
+        <h3>Psychoterapia indywidualna</h3>
+        <p>Regularne spotkania terapeutyczne skoncentrowane na twoich potrzebach. Pracujemy w nurcie psychodynamicznym i humanistycznym, z uwzględnieniem procesów grupowych i relacyjnych.</p>
+      </div>
+      <div class="oferta-kafel">
+        <h3>Wsparcie psychologiczne</h3>
+        <p>Konsultacje psychologiczne dla osób szukających pomocy w konkretnej sytuacji — bez długotrwałego procesu terapeutycznego. Pomoc w kryzysie, interwencja, rozmowa wspierająca.</p>
+      </div>
+      <div class="oferta-kafel">
+        <h3>Terapia par i rodzin</h3>
+        <p>Praca z parą lub rodziną w sytuacji konfliktu, kryzysu lub trudności komunikacyjnych. Terapeuta pomaga wypracować nowe wzorce relacji i lepsze porozumienie.</p>
+      </div>
+      <div class="oferta-kafel">
+        <h3>Doradztwo zawodowe</h3>
+        <p>Wsparcie w decyzjach zawodowych, zmianach ścieżki kariery, radzeniu sobie z wypaleniem zawodowym i trudnymi relacjami w miejscu pracy.</p>
+      </div>
+    </div>
+
+    <h2>Jak wygląda pierwsze spotkanie?</h2>
+    <p>Pierwsze spotkanie to konsultacja wstępna — czas, żeby powiedzieć co cię sprowadza i wspólnie zastanowić się, co może ci najbardziej pomóc. Nie ma żadnych zobowiązań. Po konsultacji decydujemy razem o dalszym kroku.</p>
+    <p>Wszystkie spotkania są całkowicie poufne.</p>
+
+    <div class="cta-box">
+      <p>Chcesz umówić pierwsze spotkanie?</p>
+      <a href="/kontakt">Skontaktuj się →</a>
+    </div>
+  </div>
+
+  <style>
+    .oferta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 32px 0;
+    }
+    .oferta-kafel {
+      padding: 28px;
+      background: var(--zielony-jasny);
+      border: 1px solid #daebd8;
+    }
+    .oferta-kafel h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .oferta-kafel p {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--szary);
+      margin: 0;
+    }
+    .cta-box {
+      margin-top: 48px;
+      padding: 32px;
+      background: var(--zielony-jasny);
+      border-left: 3px solid var(--zielony);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .cta-box p { font-size: 1rem; color: var(--czarny); margin: 0; }
+    .cta-box a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--czarny);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--zielony-ciemny);
+      padding-bottom: 2px;
+    }
+    @media (max-width: 700px) {
+      .oferta-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</Layout>

@@ -1,180 +1,291 @@
 ---
-// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
 ---
+<Layout title="Strona główna">
+  <style>
+    .hero {
+      position: relative;
+      height: 88vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #2c3528;
+    }
 
-<!DOCTYPE html>
-<html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marcin Szargiej — Mediacje, Szkolenia, Terapia</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/zespol.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.35;
+      z-index: 0;
+    }
 
-      body {
-        font-family: Georgia, serif;
-        color: #1a1a1a;
-        background-color: #fafaf8;
-      }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      max-width: 700px;
+    }
 
-      /* HEADER */
-      header {
-        background-color: #2c3e50;
-        color: white;
-        padding: 60px 40px;
-        text-align: center;
-      }
+    .hero-nazwa {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: white;
+      line-height: 1.15;
+    }
 
-      header h1 {
-        font-size: 2.8rem;
-        letter-spacing: 1px;
-        margin-bottom: 12px;
-      }
+    .hero-nazwa span {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      margin-bottom: 12px;
+    }
 
-      header p {
-        font-size: 1.2rem;
-        color: #bdc3c7;
-        font-style: italic;
-      }
+    .hero-divider {
+      width: 50px;
+      height: 1px;
+      background: var(--zielony);
+    }
 
-      /* SEKCJE */
-      section {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 60px 40px;
-      }
+    .hero-opis {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 480px;
+    }
 
-      section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 24px;
-        color: #2c3e50;
-        border-bottom: 2px solid #e0e0e0;
-        padding-bottom: 10px;
-      }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 8px;
+    }
 
-      section p {
-        font-size: 1.05rem;
-        line-height: 1.8;
-        color: #444;
-      }
+    .btn-primary {
+      background: var(--zielony);
+      color: var(--czarny);
+      padding: 13px 32px;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
 
-      /* KARTY OFERTY */
-      .oferta-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 24px;
-        margin-top: 16px;
-      }
+    .btn-primary:hover {
+      background: var(--zielony-ciemny);
+      color: white;
+    }
 
-      .karta {
-        background: white;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 28px 24px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.75);
+      padding: 13px 32px;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
 
-      .karta h3 {
-        font-size: 1.2rem;
-        color: #2c3e50;
-        margin-bottom: 12px;
-      }
+    .btn-outline:hover {
+      border-color: white;
+      color: white;
+    }
 
-      .karta p {
-        font-size: 0.95rem;
-        line-height: 1.7;
-        color: #555;
-      }
+    .uslugi {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #e5ece4;
+    }
 
-      /* KONTAKT */
-      .kontakt-info {
-        margin-top: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
+    .usluga {
+      padding: 50px 48px;
+      border-right: 1px solid #e5ece4;
+      text-decoration: none;
+      color: var(--czarny);
+      transition: background 0.2s;
+      display: block;
+    }
 
-      .kontakt-info a {
-        color: #2c3e50;
-        text-decoration: none;
-        font-size: 1.05rem;
-      }
+    .usluga:last-child { border-right: none; }
+    .usluga:hover { background: var(--zielony-jasny); }
 
-      .kontakt-info a:hover {
-        text-decoration: underline;
-      }
+    .usluga-ikona {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
 
-      /* FOOTER */
-      footer {
-        background-color: #2c3e50;
-        color: #bdc3c7;
-        text-align: center;
-        padding: 30px 20px;
-        font-size: 0.9rem;
-      }
-    </style>
-  </head>
+    .usluga h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
 
-  <body>
+    .usluga p {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--szary);
+    }
 
-    <header>
-      <h1>Marcin Szargiej</h1>
-      <p>Pedagog, terapeuta i mediator sadowy — Bialystok</p>
-    </header>
+    .usluga-wiecej {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--zielony-ciemny);
+      font-weight: 500;
+    }
 
-    <section>
-      <h2>O mnie</h2>
-      <p>
-        Jestem pedagogiem, terapieta i mediatorem sadowym z wieloletnim doswiadczeniem.
-        Pracuje z osobami indywidualnymi, rodzinami i organizacjami w obszarach
-        mediacji, psychoedukacji, profilaktyki zachowan ryzykownych oraz doradztwa zawodowego.
-        Pomagam rozwiazywac konflikty i budowac lepsze relacje — w sposob spokojny, skuteczny i oparty na dialogu.
-      </p>
-    </section>
+    .o-nas-sekcja {
+      background: var(--zielony-jasny);
+      padding: 80px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      border-top: 1px solid #daebd8;
+    }
 
-    <section>
-      <h2>Oferta</h2>
-      <div class="oferta-grid">
-        <div class="karta">
-          <h3>Mediacje</h3>
-          <p>
-            Prowadze mediacje cywilne: gospodarcze, rodzinne oraz z zakresu prawa pracy.
-            Rowniez mediacje karne. Pomagam stronom dojsc do porozumienia bez kosztownych procesow sadowych.
-          </p>
-        </div>
-        <div class="karta">
-          <h3>Szkolenia</h3>
-          <p>
-            Organizuje szkolenia z zakresu mediacji, psychoedukacji i profilaktyki.
-            Zajeecia prowadze dla instytucji, szkol oraz grup zawodowych.
-          </p>
-        </div>
-        <div class="karta">
-          <h3>Terapia</h3>
-          <p>
-            Oferuje wsparcie terapeutyczne oraz doradztwo zawodowe.
-            Wspomagam osoby w trudnych momentach zyciowych, pomagajac odzyskac rownowage i kierunek.
-          </p>
-        </div>
+    .o-nas-tekst h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .o-nas-tekst p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--szary);
+      margin-bottom: 14px;
+    }
+
+    .o-nas-tekst a {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--czarny);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--zielony-ciemny);
+      padding-bottom: 2px;
+    }
+
+    .o-nas-osoby {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .osoba-karta {
+      background: white;
+      padding: 24px 28px;
+      border-left: 3px solid var(--zielony);
+      text-decoration: none;
+      color: var(--czarny);
+      transition: border-color 0.2s;
+    }
+
+    .osoba-karta:hover { border-color: var(--zielony-ciemny); }
+
+    .osoba-karta h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .osoba-karta p {
+      font-size: 0.85rem;
+      color: var(--szary);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .uslugi { grid-template-columns: 1fr; }
+      .usluga { border-right: none; border-bottom: 1px solid #e5ece4; }
+      .o-nas-sekcja { grid-template-columns: 1fr; padding: 50px 20px; gap: 40px; }
+      .hero-nazwa { font-size: 2rem; }
+    }
+  </style>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-nazwa">
+        <span>Ośrodek Mediacyjno-Psychologiczny</span>
+        Szargiej & Małachowska
       </div>
-    </section>
-
-    <section>
-      <h2>Kontakt</h2>
-      <div class="kontakt-info">
-        <a href="tel:792518315">Tel: 792 518 315</a>
-        <a href="mailto:mszargiej@mediacje.pl">mszargiej@mediacje.pl</a>
-        <span>ul. Antoniukowska 62/1, 15-845 Bialystok</span>
+      <div class="hero-divider"></div>
+      <p class="hero-opis">Mediacje, szkolenia i terapia — profesjonalna pomoc w rozwiązywaniu konfliktów i budowaniu lepszych relacji. Białystok.</p>
+      <div class="hero-buttons">
+        <a href="/o-nas" class="btn-primary">Poznaj nas</a>
+        <a href="/kontakt" class="btn-outline">Kontakt</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p>Marcin Szargiej &copy; 2025 — Mediacje, Szkolenia, Terapia — Bialystok</p>
-    </footer>
+  <section class="uslugi">
+    <a href="/mediacje" class="usluga">
+      <div class="usluga-ikona">⚖️</div>
+      <h3>Mediacje</h3>
+      <p>Mediacje cywilne, rodzinne, gospodarcze, z zakresu prawa pracy oraz karne. Pomagamy stronom dojść do porozumienia.</p>
+      <span class="usluga-wiecej">Dowiedz się więcej →</span>
+    </a>
+    <a href="/szkolenia" class="usluga">
+      <div class="usluga-ikona">🎓</div>
+      <h3>Szkolenia</h3>
+      <p>Szkolenia z mediacji, psychoedukacji i umiejętności miękkich dla szkół, instytucji i organizacji.</p>
+      <span class="usluga-wiecej">Dowiedz się więcej →</span>
+    </a>
+    <a href="/terapia" class="usluga">
+      <div class="usluga-ikona">🌿</div>
+      <h3>Terapia</h3>
+      <p>Wsparcie psychologiczne, psychoterapia i doradztwo zawodowe. Pomoc w trudnych momentach życiowych.</p>
+      <span class="usluga-wiecej">Dowiedz się więcej →</span>
+    </a>
+  </section>
 
-  </body>
-</html>
+  <section class="o-nas-sekcja">
+    <div class="o-nas-tekst">
+      <h2>Ośrodek Mediacyjno-Psychologiczny</h2>
+      <p>Jesteśmy zespołem specjalistów z wieloletnim doświadczeniem w mediacji, psychoterapii i szkoleniach. Działamy w Białymstoku, wspierając osoby indywidualne, rodziny i organizacje.</p>
+      <p>Nasze podejście łączy wiedzę prawną, psychologiczną i pedagogiczną — tak, żeby każda osoba mogła znaleźć właściwe dla siebie wsparcie.</p>
+      <a href="/o-nas">O ośrodku →</a>
+    </div>
+    <div class="o-nas-osoby">
+      <a href="/o-nas/marcin" class="osoba-karta">
+        <h4>Marcin Szargiej</h4>
+        <p>Pedagog, mediator sądowy, terapeuta. Specjalista z zakresu mediacji rodzinnych, karnych i szkolnych.</p>
+      </a>
+      <a href="/o-nas/sylwia" class="osoba-karta">
+        <h4>Sylwia Małachowska</h4>
+        <p>Psycholog, psychoterapeuta, mediator stały przy Sądzie Okręgowym w Białymstoku.</p>
+      </a>
+    </div>
+  </section>
+</Layout>

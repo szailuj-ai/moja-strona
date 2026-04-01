@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Sylwia Małachowska">
+  <div class="strona-hero">
+    <p class="breadcrumb"><a href="/o-nas">O nas</a> / Sylwia Małachowska</p>
+    <h1>Sylwia Małachowska</h1>
+    <p>Psycholog, psychoterapeuta, mediator sądowy</p>
+  </div>
+
+  <div class="strona-tresc">
+    <h2>Kim jestem</h2>
+    <p>Sylwia Małachowska jest psychologiem, psychoterapeutą oraz mediatorem stałym przy Sądzie Okręgowym w Białymstoku. Ma ponad 20 lat doświadczenia w pracy psychologicznej — z dziećmi, rodzinami i dorosłymi.</p>
+    <p>W latach 2000–2007 pracowała jako psycholog w Domu Dziecka w Białymstoku, gdzie zajmowała się wychowankami i ich rodzinami, interwencją kryzysową. W latach 2006–2022 była psychologiem w Poradni Psychologiczno-Pedagogicznej, prowadząc diagnozę i warsztaty umiejętności miękkich.</p>
+
+    <h2>Specjalizacje</h2>
+    <p>Psychoterapia — pracuje terapeutycznie z osobami dorosłymi, parami i rodzinami. Jej podejście opiera się na procesach grupowych i pracy z relacją.</p>
+    <p>Mediacje — jako mediator stały przy Sądzie Okręgowym prowadzi mediacje cywilne, rodzinne i gospodarcze. Jest trenerem mediacji i regularnie szkoli przyszłych mediatorów.</p>
+    <p>Szkolenia i treningi — prowadzi szkolenia z umiejętności miękkich, procesów grupowych i komunikacji dla firm, szkół i instytucji. Specjalizuje się w mediacji rówieśniczej i szkolnej.</p>
+
+    <h2>Doświadczenie</h2>
+    <p>Sylwia Małachowska jest prelegentką ogólnopolskich konferencji mediacyjnych, w tym Kongresu Mediatorów Szkolnych i Rówieśniczych. Współpracuje z Sądem Arbitrażowym przy Krajowej Izbie Gospodarczej w Warszawie. Razem z Marcinem Szargiejem tworzy Ośrodek Mediacyjno-Psychologiczny w Białymstoku.</p>
+
+    <div class="kontakt-box">
+      <p>Chcesz umówić się na terapię lub konsultację?</p>
+      <a href="/kontakt">Skontaktuj się →</a>
+    </div>
+  </div>
+
+  <style>
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: var(--szary);
+      margin-bottom: 12px;
+    }
+    .breadcrumb a {
+      color: var(--zielony-ciemny);
+      text-decoration: none;
+    }
+    .kontakt-box {
+      margin-top: 48px;
+      padding: 32px;
+      background: var(--zielony-jasny);
+      border-left: 3px solid var(--zielony);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .kontakt-box p {
+      font-size: 1rem;
+      color: var(--czarny);
+      margin: 0;
+    }
+    .kontakt-box a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--czarny);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--zielony-ciemny);
+      padding-bottom: 2px;
+    }
+  </style>
+</Layout>

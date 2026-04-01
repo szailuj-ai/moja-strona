@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="O nas">
+  <div class="strona-hero">
+    <h1>O nas</h1>
+    <p>Poznaj Ośrodek Mediacyjno-Psychologiczny Szargiej & Małachowska — nasz zespół, wartości i sposób pracy.</p>
+  </div>
+  <div class="strona-tresc">
+    <h2>Kim jesteśmy</h2>
+    <p>Ośrodek Mediacyjno-Psychologiczny Szargiej & Małachowska to spółka cywilna działająca w Białymstoku, przy ul. Antoniukowskiej 62/1. Łączymy kompetencje z zakresu mediacji, psychologii, pedagogiki i prawa.</p>
+    <p>Wierzymy, że konflikty — choć trudne — mogą być punktem wyjścia do głębszego porozumienia. Naszą misją jest towarzyszyć ludziom w tym procesie: spokojnie, profesjonalnie i z poszanowaniem każdej ze stron.</p>
+    <h2>Nasz zespół</h2>
+    <div class="osoby-grid">
+      <a href="/o-nas/marcin" class="osoba-kafel">
+        <div class="osoba-inicjaly">MS</div>
+        <div class="osoba-info">
+          <h3>Marcin Szargiej</h3>
+          <p>Pedagog, mediator sądowy, terapeuta. Specjalista od mediacji rodzinnych, szkolnych i karnych.</p>
+          <span class="wiecej">Czytaj więcej →</span>
+        </div>
+      </a>
+      <a href="/o-nas/sylwia" class="osoba-kafel">
+        <div class="osoba-inicjaly">SM</div>
+        <div class="osoba-info">
+          <h3>Sylwia Małachowska</h3>
+          <p>Psycholog, psychoterapeuta, mediator stały przy Sądzie Okręgowym w Białymstoku.</p>
+          <span class="wiecej">Czytaj więcej →</span>
+        </div>
+      </a>
+    </div>
+    <h2>Siedziba</h2>
+    <p>Przyjmujemy w Białymstoku, ul. Antoniukowska 62/1. <a href="/jak-nas-znalezc">Zobacz jak do nas trafić</a>.</p>
+  </div>
+  <style>
+    a { color: var(--zielony-ciemny); }
+    .osoby-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 28px 0; }
+    .osoba-kafel { display: flex; gap: 20px; padding: 28px; background: var(--zielony-jasny); border: 1px solid #daebd8; text-decoration: none; color: var(--czarny); transition: background 0.2s; }
+    .osoba-kafel:hover { background: #d8ebd5; }
+    .osoba-inicjaly { width: 52px; height: 52px; min-width: 52px; background: var(--zielony); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; }
+    .osoba-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
+    .osoba-info p { font-size: 0.87rem; line-height: 1.65; color: var(--szary); margin-bottom: 10px; }
+    .wiecej { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--zielony-ciemny); font-weight: 500; }
+    @media (max-width: 700px) { .osoby-grid { grid-template-columns: 1fr; } }
+  </style>
+</Layout>

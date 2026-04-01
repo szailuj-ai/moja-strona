@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posty = [
+  {
+    data: "26 lutego 2025",
+    tytul: "Nowi mediatorzy w Świętokrzyskiem",
+    tresc: "Piotr Łojek, Świętokrzyski Kurator Oświaty, wręczył certyfikaty 25 nauczycielom, którzy przeszli 4-dniowe szkolenie z mediacji szkolnych. Gratulujemy wszystkim uczestnikom!",
+  },
+  {
+    data: "Wrzesień 2023",
+    tytul: "IX Kongres Mediatorów Szkolnych i Rówieśniczych",
+    tresc: "W dniach 25–26 września 2023 roku wzięliśmy udział w IX Kongresie Mediatorów Szkolnych i Rówieśniczych w Kamieniu. Uczniowie Szkolnego Klubu Mediatora zaprezentowali symulacje mediacji rówieśniczych.",
+  },
+  {
+    data: "Kwiecień 2023",
+    tytul: "Konferencja: Mediacje w oświacie — wyzwania i perspektywy",
+    tresc: "W Szkole Podstawowej nr 47 w Białymstoku odbyła się ogólnopolska konferencja poświęcona mediacji w szkołach. Wzięli w niej udział sędziowie, adwokaci, pedagodzy i dyrektorzy szkół z całej Polski.",
+  },
+];
+---
+<Layout title="Aktualności">
+  <div class="strona-hero">
+    <h1>Aktualności</h1>
+    <p>Co słychać w Ośrodku — szkolenia, konferencje, certyfikacje i inne wydarzenia.</p>
+  </div>
+
+  <div class="aktualnosci-lista">
+    {posty.map((post) => (
+      <article class="post">
+        <div class="post-meta">
+          <span class="post-data">{post.data}</span>
+        </div>
+        <div class="post-tresc">
+          <h2>{post.tytul}</h2>
+          <p>{post.tresc}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <style>
+    .aktualnosci-lista {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .post {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 32px;
+      padding: 40px 0;
+      border-bottom: 1px solid #e5ece4;
+    }
+    .post:last-child { border-bottom: none; }
+    .post-data {
+      font-size: 0.78rem;
+      color: var(--szary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding-top: 4px;
+      line-height: 1.5;
+    }
+    .post-tresc h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .post-tresc p {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: #555;
+    }
+    @media (max-width: 600px) {
+      .aktualnosci-lista { padding: 40px 20px; }
+      .post { grid-template-columns: 1fr; gap: 12px; }
+    }
+  </style>
+</Layout>

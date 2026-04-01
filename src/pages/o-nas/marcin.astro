@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Marcin Szargiej">
+  <div class="strona-hero">
+    <p class="breadcrumb"><a href="/o-nas">O nas</a> / Marcin Szargiej</p>
+    <h1>Marcin Szargiej</h1>
+    <p>Pedagog, mediator sądowy, terapeuta</p>
+  </div>
+
+  <div class="strona-tresc">
+    <h2>Kim jestem</h2>
+    <p>Marcin Szargiej jest pedagogiem, terapeutą i mediatorem sądowym z wieloletnim doświadczeniem w pracy z osobami indywidualnymi, rodzinami i instytucjami. Specjalizuje się w mediacjach rodzinnych, karnych oraz szkolnych.</p>
+    <p>Prowadzi zajęcia z zakresu psychoedukacji, profilaktyki zachowań ryzykownych i doradztwa zawodowego. Jest współtwórcą programu Szkolnych Klubów Mediatora, który wdraża w szkołach w całej Polsce.</p>
+
+    <h2>Specjalizacje</h2>
+    <p>Mediacje rodzinne, cywilne i karne — jest mediatorem sądowym wpisanym na listę mediatorów stałych. W swojej pracy koncentruje się na tym, żeby strony konfliktu mogły wypracować własne, trwałe porozumienie.</p>
+    <p>Szkolenia i psychoedukacja — prowadzi warsztaty dla szkół, pedagogów, rodziców i młodzieży. Szczególnie bliskie mu są tematy profilaktyki zachowań ryzykownych i budowania umiejętności społecznych.</p>
+    <p>Terapia i doradztwo — oferuje wsparcie terapeutyczne i doradztwo zawodowe dla osób w trudnych momentach życiowych.</p>
+
+    <h2>Doświadczenie</h2>
+    <p>Marcin Szargiej jest aktywnym uczestnikiem i prelegentem konferencji mediacyjnych w Polsce. Współpracuje z sądami, szkołami i organizacjami pozarządowymi. Razem z Sylwią Małachowską tworzy Ośrodek Mediacyjno-Psychologiczny w Białymstoku.</p>
+
+    <div class="kontakt-box">
+      <p>Chcesz umówić się na mediację lub konsultację?</p>
+      <a href="/kontakt">Skontaktuj się →</a>
+    </div>
+  </div>
+
+  <style>
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: var(--szary);
+      margin-bottom: 12px;
+    }
+    .breadcrumb a {
+      color: var(--zielony-ciemny);
+      text-decoration: none;
+    }
+    .kontakt-box {
+      margin-top: 48px;
+      padding: 32px;
+      background: var(--zielony-jasny);
+      border-left: 3px solid var(--zielony);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .kontakt-box p {
+      font-size: 1rem;
+      color: var(--czarny);
+      margin: 0;
+    }
+    .kontakt-box a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--czarny);
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid var(--zielony-ciemny);
+      padding-bottom: 2px;
+    }
+  </style>
+</Layout>
