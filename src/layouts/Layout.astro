@@ -7,7 +7,7 @@ const pathname = Astro.url.pathname;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | Szargiej i Malachowska</title>
+    <title>{title} | Szargiej i Małachowska</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
     <style is:global>
       :root { --zielony: #a8c5a0; --zielony-ciemny: #7aaa70; --zielony-jasny: #e8f2e6; --czarny: #1a1a1a; --szary: #555; --biel: #ffffff; }
@@ -23,6 +23,8 @@ const pathname = Astro.url.pathname;
       .nav-links a { text-decoration: none; color: var(--szary); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
       .nav-links a:hover { color: var(--czarny); background: var(--zielony-jasny); }
       .nav-links a.active { color: var(--zielony-ciemny); font-weight: 500; background: var(--zielony-jasny); }
+      .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+      .hamburger span { display: block; width: 24px; height: 2px; background: var(--czarny); transition: all 0.3s; }
       main { min-height: calc(100vh - 70px - 120px); }
       footer { background: var(--czarny); color: #aaa; padding: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
       footer p { font-size: 0.8rem; font-weight: 300; }
@@ -37,12 +39,13 @@ const pathname = Astro.url.pathname;
       .strona-tresc h2:first-child { margin-top: 0; }
       .strona-tresc p { font-size: 0.95rem; line-height: 1.85; color: #444; margin-bottom: 16px; }
       @media (max-width: 768px) {
-        nav { padding: 0 20px; flex-wrap: wrap; height: auto; padding-top: 12px; padding-bottom: 12px; gap: 12px; }
-        .nav-links { flex-wrap: wrap; gap: 4px; }
-        .nav-links a { font-size: 0.72rem; padding: 4px 8px; }
-        .strona-hero { padding: 60px 80px 50px; }
+        .hamburger { display: flex; }
+        .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--biel); flex-direction: column; align-items: flex-start; padding: 16px 24px; gap: 4px; border-bottom: 1px solid #e5ece4; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .nav-links.open { display: flex; }
+        nav { padding: 0 20px; height: 70px; }
+        .strona-hero { padding: 40px 20px 30px; }
         .strona-hero h1 { font-size: 2rem; }
-        .strona-tresc { padding: 60px 80px; }
+        .strona-tresc { padding: 40px 20px; }
         footer { padding: 30px 20px; flex-direction: column; align-items: flex-start; }
       }
     </style>
@@ -56,7 +59,12 @@ const pathname = Astro.url.pathname;
           <span>Szargiej & Małachowska</span>
         </div>
       </a>
-      <ul class="nav-links">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="/" class={pathname === "/" ? "active" : ""}>Strona główna</a></li>
         <li><a href="/o-nas" class={pathname.startsWith("/o-nas") ? "active" : ""}>O nas</a></li>
         <li><a href="/mediacje" class={pathname === "/mediacje" ? "active" : ""}>Mediacje</a></li>
@@ -76,5 +84,12 @@ const pathname = Astro.url.pathname;
         <a href="https://www.facebook.com/61558793636623" target="_blank">Facebook</a>
       </div>
     </footer>
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    </script>
   </body>
 </html>
